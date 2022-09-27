@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<title>Characters</title>
+
+
+<!------- General ------->
+<style>
+
+:root{
+    --Bckd: #1f1f29;
+    --Light: #96a2b3;
+    --Middle: #596070;
+    --Dark: #413a42;
+    --Storm0: #3055c3;
+    --Storm1: #565d8a;
+    --Mayhem0: #d0a908;
+    --Mayhem1: #6d5e46;
+    --Soph0: #059f8b;
+    --Soph1: #4a696b;
+    --Ashley0: #5b890c;
+    --Ashley1: #526954;
+    --Michael0: #941b2a;
+    --Michael1: #715663;
+    --Dev0: #d36019;
+    --Dev1: #7a5452;
+}
+
+body{
+    background-color: var(--Bckd);
+    font-family: /*"courier new", */monospace;
+    color: var(--Middle);
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+hr{
+    border: none;
+}
+
+hr.a{
+    height: 0.25em;
+    background-color: var(--Light);
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+hr.b{
+    height: 0.08em;
+    background-color: var(--Middle);
+    margin-bottom: 1em;
+}
+
+h1{
+    margin-bottom: 0em;
+    color: var(--Light);
+}
+</style>
+
+
+
+
+
+<!------- Character Specific Colours ------->
+<style>
+
+/* --- Header Text --- */
+
+.Storm0{
+    color: var(--Storm0);
+}
+
+.Mayhem0{
+    color: var(--Mayhem0);
+}
+
+.Soph0{
+    color: var(--Soph0);
+}
+
+.Ashley0{
+    color: var(--Ashley0);
+}
+
+.Michael0{
+    color: var(--Michael0);
+}
+
+.Dev0{
+    color: var(--Dev0);
+}
+
+
+/* --- Paragraph Text --- */
+
+.Storm1{
+    color: var(--Storm1);
+}
+
+.Mayhem1{
+    color: var(--Mayhem1);
+}
+
+.Soph1{
+    color: var(--Soph1);
+}
+
+.Ashley1{
+    color: var(--Ashley1);
+}
+
+.Michael1{
+    color: var(--Michael1);
+}
+
+.Dev1{
+    color: var(--Dev1);
+}
+
+
+/* --- Fills --- */
+
+.fillStorm0, .fillStorm1:hover {
+    fill: var(--Storm0)
+}
+
+.fillStorm1, .fillStorm0:hover {
+    fill: var(--Storm1)
+}
+
+
+.fillMayhem0, .fillMayhem1:hover {
+    fill: var(--Mayhem0)
+}
+
+.fillMayhem1, .fillMayhem0:hover {
+    fill: var(--Mayhem1)
+}
+
+
+.fillSoph0, .fillSoph1:hover {
+    fill: var(--Soph0)
+}
+
+.fillSoph1, .fillSoph0:hover {
+    fill: var(--Soph1)
+}
+
+
+.fillAshley0, .fillAshley1:hover {
+    fill: var(--Ashley0)
+}
+
+.fillAshley1, .fillAshley0:hover {
+    fill: var(--Ashley1)
+}
+
+
+.fillMichael0, .fillMichael1:hover {
+    fill: var(--Michael0)
+}
+
+.fillMichael1, .fillMichael0:hover {
+    fill: var(--Michael1)
+}
+
+
+.fillDev0, .fillDev1:hover {
+    fill: var(--Dev0)
+}
+
+.fillDev1, .fillDev0:hover {
+    fill: var(--Dev1)
+}
+</style>
+
+
+
+
+
+<!------- Dimensions ------->
+<style>
+._8x8 {
+    width: 8em;
+    height: 8em;
+}
+
+._10x10 {
+    width: 10em;
+    height: 10em;
+}
+</style>
+</head>
+
+
+
+
+
+<!--
+
+<div class="pfContent Storm1" id="stormContent">
+    <h3 class="Storm0">Content</h3>
+    <p>Content</p>
+</div>
+
+<div class="pfContent tMayhem" id="mayhemContent">
+    <h3 class="hMayhem">Content</h3>
+    <p>Content</p>
+</div>
+
+<div class="pfContent tSoph" id="sophContent">
+    <h3 class="hSoph">Content</h3>
+    <p>Content</p>
+</div>
+
+<div class="pfContent tAshley" id="ashleyContent">
+    <h3 class="hAshley">Content</h3>
+    <p>Content</p>
+</div>
+
+<div class="pfContent tMichael" id="michaelContent">
+    <h3 class="hMichael">Content</h3>
+    <p>Content</p>
+</div>
+
+<div class="pfContent tDev" id="devContent">
+    <h3 class="hDev">Content</h3>
+    <p>Content</p>
+</div>
+
+-->
+
+
+<body>
+<h1>Characters</h1>
+<hr class="b">
+
+<div>
+<style>
+/* ------- Profiles ------- */
+
+.pfContent {
+    display: none;
+    overflow: hidden;
+    clear: left;
+}
+
+.pfDiv{
+    width: 8em;
+    height: 10em;
+    position: relative;
+    border-radius: 2em;
+    padding: 1.5em;
+    background-color: var(--Bckd);
+    cursor: pointer;
+    margin-bottom: 2em;
+    margin-right: 1em;
+    float: left;
+    border: 0.2em solid var(--Bckd);
+    color: var(--Light);
+}
+
+
+
+.pf {
+    object-fit: cover;
+    border-radius: 50%;
+    height: 8em;
+    margin-bottom: 0.5em;
+}
+
+.pfName{
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 0em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+
+
+/* --- Storm --- */
+
+.pfDivStorm{
+}
+
+.pfDivStorm:hover{
+    border-color: var(--Storm0);
+    color: var(--Storm0);
+}
+
+.pfDivStorm-a{
+    background-color: var(--Storm0);
+    border-color: var(--Storm0);
+    color: var(--Bckd);
+}
+
+/* --- Mayhem --- */
+
+.pfDivMayhem{
+}
+
+.pfDivMayhem:hover, .pfDivMayhem-a{
+    border-color: var(--Mayhem0);
+    color: var(--Mayhem0);
+}
+
+.pfDivMayhem-a{
+    background-color: var(--Mayhem0);
+    border-color: var(--Mayhem0);
+    color: var(--Bckd);
+}
+
+/* --- Soph --- */
+
+.pfDivSoph{
+}
+
+.pfDivSoph:hover, .pfDivSoph-a{
+    border-color: var(--Soph0);
+    color: var(--Soph0);
+}
+
+.pfDivSoph-a{
+    background-color: var(--Soph0);
+    border-color: var(--Soph0);
+    color: var(--Bckd);
+}
+
+/* --- Ashley --- */
+
+.pfDivAshley{
+}
+
+.pfDivAshley:hover, .pfDivAshley-a{
+    border-color: var(--Ashley0);
+    color: var(--Ashley0);
+}
+
+.pfDivAshley-a{
+    background-color: var(--Ashley0);
+    border-color: var(--Ashley0);
+    color: var(--Bckd);
+}
+
+/* --- Michael --- */
+
+.pfDivMichael{
+}
+
+.pfDivMichael:hover, .pfDivMichael-a{
+    border-color: var(--Michael0);
+    color: var(--Michael0);
+}
+
+.pfDivMichael-a{
+    background-color: var(--Michael0);
+    border-color: var(--Michael0);
+    color: var(--Bckd);
+}
+
+/* --- Dev --- */
+
+.pfDivDev{
+}
+
+.pfDivDev:hover, .pfDivDev-a{
+    border-color: var(--Dev0);
+    color: var(--Dev0);
+}
+
+.pfDivDev-a{
+    background-color: var(--Dev0);
+    border-color: var(--Dev0);
+    color: var(--Bckd);
+}
+
+
+
+.pfDiv:hover{
+    background-color: var(--Bckd);
+}
+</style>
+
+<div class="pfDiv pfDivStorm" id="storm">
+    <img src="https://cdn.discordapp.com/attachments/946539417655447582/1023904476983209984/Storm.png" class="pf">
+    <p class="pfName">Storm</p>
+</div>
+
+<div class="pfDiv pfDivMayhem" id="mayhem">
+    <img src="https://cdn.discordapp.com/attachments/946539417655447582/1023905254347124767/Mayhem.png" class="pf">
+    <p class="pfName">Mayhem</p>
+</div>
+
+<div class="pfDiv pfDivSoph" id="soph">
+    <img src="https://cdn.discordapp.com/attachments/946539417655447582/1023020221495255121/Soph.png" class="pf">
+    <p class="pfName">Soph</p>
+</div>
+
+<div class="pfDiv pfDivAshley" id="ashley">
+    <img src="https://cdn.discordapp.com/attachments/946539417655447582/1023020220358602883/Ashley.png" class="pf">
+    <p class="pfName">Ashley</p>
+</div>
+
+<div class="pfDiv pfDivMichael" id="michael">
+    <img src="https://cdn.discordapp.com/attachments/946539417655447582/1023022200921542757/Michael.png" class="pf">
+    <p class="pfName">Michael</p>
+</div>
+
+<div class="pfDiv pfDivDev" id="dev">
+    <img src="https://cdn.discordapp.com/attachments/946539417655447582/1023020220706717737/Dev.png" class="pf">
+    <p class="pfName">Dev</p>
+</div>
+
+
+<div class="pfContent Storm1" id="stormContent">
+
+    <h3 class="Storm0">Age:</h3>
+    <ul>
+        <li>23</li>
+    </ul>
+
+    <h3 class="Storm0">Hacking motivations:</h3>
+    <ul>
+        <li>national security threat in past, against “Sicherheitstheater”</li>
+    </ul>
+
+    <h3 class="Storm0">What drives him in general?</h3>
+    <ul>
+        <li>Storm has an idea for doing something to rectify an injustice which he’s very emotionally invested in, and after spending a decent amount of time planning this idea, he is beginning to play the long game and becomes extremely emotionally invested in the success of his plan, to the point where it becomes his perceived predominant purpose in life. Feeling that he is responsible for the safety and well being of the other group members, Storm holds this also as an important purpose for him, which pushes him into taking on a leadership role.</li>
+    </ul>
+
+    <h3 class="Storm0">Strengths:</h3>
+    <ul>
+        <li>logical thinking + (mostly) rational behaviour</li>
+        <li>curiosity + technical creativity</li>
+        <li>passionate/driven</li>
+        <li>unafraid</li>
+    </ul>
+
+    <h3 class="Storm0">Flaws:</h3>
+    <ul>
+        <li>violent outbursts sometimes, disapproving of things if they aren't being done his way (except for with mayhem, he's seen her smarts and trusts her), trust issues</li>
+        <li>perfectionism</li>
+        <li>sometimes unpredictable</li>
+        <li>ego</li>
+        <p>(altered version for when younger: reckless, lack of awareness of limitations)</p>
+    </ul>
+
+    <h3 class="Storm0">Job:</h3>
+    <ul>
+        <li>works on satellites (gives him access to broadcasting infrastructure) or at a Certificate Authority (being able to make certificates would also be helpful) (either way he's playing the long game)</li>
+    </ul>
+
+    <h3 class="Storm0">Other Notes:</h3>
+    <ul>
+        <li>storm founded the group with mayhem and is the driving force behind it</li>
+    </ul>
+
+    <h3 class="Storm0">Moodboard:</h3>
+    <ul>
+        <a href="https://www.pinterest.co.uk/solarblips/storm/" target="_blank">
+            <svg class="_8x8 fillStorm1" viewBox="0 0 24 24">
+                <path d="M0 12c0 5.123 3.211 9.497 7.73 11.218-.11-.937-.227-2.482.025-3.566.217-.932 1.401-5.938 1.401-5.938s-.357-.715-.357-1.774c0-1.66.962-2.9 2.161-2.9 1.02 0 1.512.765 1.512 1.682 0 1.025-.653 2.557-.99 3.978-.281 1.189.597 2.159 1.769 2.159 2.123 0 3.756-2.239 3.756-5.471 0-2.861-2.056-4.86-4.991-4.86-3.398 0-5.393 2.549-5.393 5.184 0 1.027.395 2.127.889 2.726a.36.36 0 0 1 .083.343c-.091.378-.293 1.189-.332 1.355-.053.218-.173.265-.4.159-1.492-.694-2.424-2.875-2.424-4.627 0-3.769 2.737-7.229 7.892-7.229 4.144 0 7.365 2.953 7.365 6.899 0 4.117-2.595 7.431-6.199 7.431-1.211 0-2.348-.63-2.738-1.373 0 0-.599 2.282-.744 2.84-.282 1.084-1.064 2.456-1.549 3.235C9.584 23.815 10.77 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12"></path>
+            </svg>
+        </a>
+    </ul>
+</div>
+
+<div class="pfContent Mayhem1" id="mayhemContent">
+    <h3 class="Mayhem0">Age:</h3>
+    <ul>
+        <li>21</li>
+    </ul>
+
+    <h3 class="Mayhem0">Hacking motivations:</h3>
+    <ul>
+        <li>free speech, people try to shut her up too often</li>
+    </ul>
+
+    <h3 class="Mayhem0">What drives her in general?</h3>
+    <ul>
+        <li>Curious AF, so learns about all sorts of things and picks up useful skills</li>
+        <li>Has personally experienced racial injustice, so she is very driven to utilise her skills to rectify injustices in general.</li>
+    </ul>
+
+    <h3 class="Mayhem0">Strengths:</h3>
+    <ul>
+        <li>Creative</li>
+        <li>Intelligent + clever</li>
+        <li>Brave</li>
+        <li>Empathetic</li>
+        <li>Positive outlook on life</li>
+    </ul>
+
+    <h3 class="Mayhem0">Flaws:</h3>
+    <ul>
+        <li>Does not think far enough / irresponsible (her and storm complement each other very well in the sense that he's very rational and grounds her sometimes and he's kinda too unable to have fun due to it and she keeps him going and her positive vibes and energy leaks onto him)</li>
+        <li>Stubborn</li>
+        <li>Impatient</li>
+    </ul>
+
+    <h3 class="Mayhem0">Job:</h3>
+    <ul>
+        <li>freelance web development (techy but also creative in a visual sense)</li>
+    </ul>
+
+    <h3 class="Mayhem0">Other Notes:</h3>
+    <ul>
+        <li>Mayhem co-founded the group out of interest for hacking and investment in the issues it goes against</li>
+        <li>chews gum and has headphones on</li>
+    </ul>
+
+    <h3 class="Mayhem0">Moodboard:</h3>
+    <ul>
+        <a href="https://www.pinterest.co.uk/solarblips/mayhem/" target="_blank">
+            <svg class="_8x8 fillMayhem1" viewBox="0 0 24 24">
+                <path d="M0 12c0 5.123 3.211 9.497 7.73 11.218-.11-.937-.227-2.482.025-3.566.217-.932 1.401-5.938 1.401-5.938s-.357-.715-.357-1.774c0-1.66.962-2.9 2.161-2.9 1.02 0 1.512.765 1.512 1.682 0 1.025-.653 2.557-.99 3.978-.281 1.189.597 2.159 1.769 2.159 2.123 0 3.756-2.239 3.756-5.471 0-2.861-2.056-4.86-4.991-4.86-3.398 0-5.393 2.549-5.393 5.184 0 1.027.395 2.127.889 2.726a.36.36 0 0 1 .083.343c-.091.378-.293 1.189-.332 1.355-.053.218-.173.265-.4.159-1.492-.694-2.424-2.875-2.424-4.627 0-3.769 2.737-7.229 7.892-7.229 4.144 0 7.365 2.953 7.365 6.899 0 4.117-2.595 7.431-6.199 7.431-1.211 0-2.348-.63-2.738-1.373 0 0-.599 2.282-.744 2.84-.282 1.084-1.064 2.456-1.549 3.235C9.584 23.815 10.77 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12"></path>
+            </svg>
+        </a>
+    </ul>
+</div>
+
+<div class="pfContent Soph1" id="sophContent">
+    <h3 class="Soph0">Age:</h3>
+    <ul>
+        <li>23</li>
+    </ul>
+
+    <h3 class="Soph0">Hacking motivations:</h3>
+    <ul>
+        <li>Initially just likes to fuck around with tech, no higher motivation but over conversations sees and understands the injustices they try to fight against (as a group) better - may doubt big hack at some point. due to some risks, not the motives, and then loses her leg</li>
+    </ul>
+
+    <h3 class="Soph0">What drives her in general?</h3>
+    <ul>
+        <li>Intense need to keep learning</li>
+        <li>Applying the things she has learned to help improve the world.</li>
+    </ul>
+
+    <h3 class="Soph0">Strengths:</h3>
+    <ul>
+        <li>Knowledge</li>
+        <li>Impressive</li>
+        <li>Curious</li>
+        <li>Driven</li>
+    </ul>
+
+    <h3 class="Soph0">Flaws:</h3>
+    <ul>
+        <li>addictive personality (substances in the past, now redirected to hunger for knowledge, she needs to always be learning, this could make her burnt out)</li>
+        <li>fear of limitations</li>
+        <li>manipulates in direction of better hacking techniques and feels empowered to do so</li>
+    </ul>
+
+    <h3 class="Soph0">Job:</h3>
+    <ul>
+        <li>(Mental note: Pouki level stuff) reverse engineering and exploit development, finding stuff like zero days, etc. for a big company she doesn't like but she likes the job (always learning new stuff)</li>
+    </ul>
+
+    <h3 class="Soph0">Other Notes:</h3>
+    <ul>
+        <li>she can be a bit cold sometimes</li>
+        <li>she's in a relationship with Ashley</li>
+    </ul>
+
+    <h3 class="Soph0">Moodboard:</h3>
+    <ul>
+        <a href="https://www.pinterest.co.uk/solarblips/soph/" target="_blank">
+            <svg class="_8x8 fillSoph1" viewBox="0 0 24 24">
+                <path d="M0 12c0 5.123 3.211 9.497 7.73 11.218-.11-.937-.227-2.482.025-3.566.217-.932 1.401-5.938 1.401-5.938s-.357-.715-.357-1.774c0-1.66.962-2.9 2.161-2.9 1.02 0 1.512.765 1.512 1.682 0 1.025-.653 2.557-.99 3.978-.281 1.189.597 2.159 1.769 2.159 2.123 0 3.756-2.239 3.756-5.471 0-2.861-2.056-4.86-4.991-4.86-3.398 0-5.393 2.549-5.393 5.184 0 1.027.395 2.127.889 2.726a.36.36 0 0 1 .083.343c-.091.378-.293 1.189-.332 1.355-.053.218-.173.265-.4.159-1.492-.694-2.424-2.875-2.424-4.627 0-3.769 2.737-7.229 7.892-7.229 4.144 0 7.365 2.953 7.365 6.899 0 4.117-2.595 7.431-6.199 7.431-1.211 0-2.348-.63-2.738-1.373 0 0-.599 2.282-.744 2.84-.282 1.084-1.064 2.456-1.549 3.235C9.584 23.815 10.77 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12"></path>
+            </svg>
+        </a>
+    </ul>
+</div>
+
+<div class="pfContent Ashley1" id="ashleyContent">
+    <h3 class="Ashley0">Age:</h3>
+    <ul>
+        <li>24</li>
+    </ul>
+
+    <h3 class="Ashley0">What does she do/what drives her?</h3>
+    <ul>
+        <li>Creates music (bassist in Ugly Giants) for the passion of the music itself and the lifestyle of playing concerts</li>
+    </ul>
+
+    <h3 class="Ashley0">Strengths:</h3>
+    <ul>
+        <li>Empathy + Charisma</li>
+        <li>Creativity + Passion</li>
+    </ul>
+
+    <h3 class="Ashley0">Flaws:</h3>
+    <ul>
+        <li>overly concerned/worried about her loved ones (including her gf Soph) to the point where it negatively impacts her and possibly her relationships</li>
+        <li>moody + impulsive</li>
+    </ul>
+
+    <h3 class="Ashley0">Job:</h3>
+    <ul>
+        <li>Dayjob: Social work in immigration (part time)</li>
+        <li>Nightjob: Bassist in a fairly successful band</li>
+    </ul>
+
+    <h3 class="Ashley0">Other Notes:</h3>
+    <ul>
+        <li>in a relationship with soph</li>
+        <li>she's got a bit of a badass image due to her band and stuff</li>
+        <li>she likes jokingly flirting with people (soph's okay with that)</li>
+    </ul>
+
+    <h3 class="Ashley0">Moodboard:</h3>
+    <ul>
+        <a href="https://www.pinterest.co.uk/solarblips/ashley/" target="_blank">
+            <svg class="_8x8 fillAshley1" viewBox="0 0 24 24">
+                <path d="M0 12c0 5.123 3.211 9.497 7.73 11.218-.11-.937-.227-2.482.025-3.566.217-.932 1.401-5.938 1.401-5.938s-.357-.715-.357-1.774c0-1.66.962-2.9 2.161-2.9 1.02 0 1.512.765 1.512 1.682 0 1.025-.653 2.557-.99 3.978-.281 1.189.597 2.159 1.769 2.159 2.123 0 3.756-2.239 3.756-5.471 0-2.861-2.056-4.86-4.991-4.86-3.398 0-5.393 2.549-5.393 5.184 0 1.027.395 2.127.889 2.726a.36.36 0 0 1 .083.343c-.091.378-.293 1.189-.332 1.355-.053.218-.173.265-.4.159-1.492-.694-2.424-2.875-2.424-4.627 0-3.769 2.737-7.229 7.892-7.229 4.144 0 7.365 2.953 7.365 6.899 0 4.117-2.595 7.431-6.199 7.431-1.211 0-2.348-.63-2.738-1.373 0 0-.599 2.282-.744 2.84-.282 1.084-1.064 2.456-1.549 3.235C9.584 23.815 10.77 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12"></path>
+            </svg>
+        </a>
+    </ul>
+</div>
+
+<div class="pfContent tMichael" id="michaelContent">
+    <h3 class="hMichael">Content</h3>
+    <p>Content</p>
+</div>
+
+<div class="pfContent tDev" id="devContent">
+    <h3 class="hDev">Content</h3>
+    <p>Content</p>
+</div>
+
+
+
+<script>
+var pfbs = document.getElementsByClassName("pfDiv");
+var pfContentList = document.getElementsByClassName("pfContent");
+var i;
+
+for (i = 0; i < pfbs.length; i++) {
+    pfbs[i].addEventListener("click", function() {
+    var x;
+    var y;
+    var idContent = this.id + "Content";
+    var content = document.getElementById(idContent);
+    if (this.classList.length == 2) {
+        for (x = 0; x < window.pfbs.length; x++) {
+            window.pfbs[x].classList.remove(window.pfbs[x].classList[2]);
+        }
+        for (y = 0; y < window.pfContentList.length; y++) {
+            window.pfContentList[y].style.display = "none";
+        }
+        this.classList.toggle(this.classList[1] + "-a");
+        content.style.display = "block";
+    } else {
+        this.classList.toggle(this.classList[1] + "-a");
+        content.style.display = "none";
+    }
+    });
+}
+</script>
+</div>
+<hr class="a" style="clear:left">
+
+<div style="color: var(--Light)"><p>Ur mom is a spaghetti (code).</p></div>
+
+</body>
+</html>
